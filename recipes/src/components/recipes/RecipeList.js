@@ -4,6 +4,7 @@ import RecipeSummary from './RecipeSummary'
 import './recipes.css'
 import styled from 'styled-components'
 import RecipeForm from "./RecipeForm"
+import SearchBar from './SearchBar'
 
 
 const SummaryCard=styled.div`
@@ -54,7 +55,48 @@ class FriendsList extends React.Component {
                             Ingredients:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
                 
                         },
+
+                        {
+                            id:1,
+                            title:'Yum-Yum-Tacos',
+                            img:'https://images.pexels.com/photos/2087748/pexels-photo-2087748.jpeg?cs=srgb&dl=blur-close-up-cuisine-2087748.jpg&fm=jpg',
+                            instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
+                            nameOfSource:'mom',
+                            category:'mexican',
+                            Ingredients:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
                 
+                        },
+                        {
+                            id:1,
+                            title:'Yum-Yum-Tacos',
+                            img:'https://images.pexels.com/photos/2087748/pexels-photo-2087748.jpeg?cs=srgb&dl=blur-close-up-cuisine-2087748.jpg&fm=jpg',
+                            instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
+                            nameOfSource:'mom',
+                            category:'mexican',
+                            Ingredients:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
+                
+                        },
+
+                {
+                            id:1,
+                            title:'Yum-Yum-Tacos',
+                            img:'https://images.pexels.com/photos/2087748/pexels-photo-2087748.jpeg?cs=srgb&dl=blur-close-up-cuisine-2087748.jpg&fm=jpg',
+                            instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
+                            nameOfSource:'mom',
+                            category:'mexican',
+                            Ingredients:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
+                
+                        },
+                        {
+                            id:1,
+                            title:'Yum-Yum-Tacos',
+                            img:'https://images.pexels.com/photos/2087748/pexels-photo-2087748.jpeg?cs=srgb&dl=blur-close-up-cuisine-2087748.jpg&fm=jpg',
+                            instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
+                            nameOfSource:'mom',
+                            category:'mexican',
+                            Ingredients:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
+                
+                        },
                     ]
     }
 }
@@ -68,6 +110,7 @@ render(){
         <h1>Recipes</h1>
        < SummaryCard>
         <div>
+            <SearchBar/>
         
         {this.state.recipes.map(recipe=>{
             return (
