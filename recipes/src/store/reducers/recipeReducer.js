@@ -77,7 +77,7 @@ const initState = {
 
 }
 
-const projectReducer = (state = initState, action) => {
+const recipeReducer = (state = initState, action) => {
   switch (action.type) {
     case 'CREATE_RECIPE_SUCCESS':
       console.log('create project success');
@@ -90,4 +90,4 @@ const projectReducer = (state = initState, action) => {
   }
 };
 
-export default projectReducer;
+export default recipeReducer;

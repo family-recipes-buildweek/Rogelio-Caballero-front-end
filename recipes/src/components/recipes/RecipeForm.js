@@ -4,7 +4,7 @@ import React from 'react'
 
 class RecipeForm extends React.Component{
         state={
-        title:'',
+        Title:'',
         img:'',
         category:'',
         nameOfSource:'',

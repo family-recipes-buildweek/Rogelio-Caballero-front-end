@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 
 
 
-const store =createStore(rootReducer,applyMiddleware(thunk))
+const store =createStore(rootReducer)
 
 
 ReactDOM.render(
@@ -18,5 +18,5 @@ ReactDOM.render(
     </Provider>
    
     
-   , document.getElementById('root'));
+, document.getElementById('root'));
 

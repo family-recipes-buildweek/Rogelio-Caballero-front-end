@@ -1,19 +1,19 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
+import SignedInLinks from './SignedInLinks'
+import SignedOutLinks from './SignedOutLinks'
 
 const NavBar =(props)=>{
 return(
-    <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo right">Secret-Family-Recipes</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="sass.html">Login</a></li>
-        <li><a href="badges.html">Sign Up</a></li>
-        <li><a href="collapsible.html"></a></li>
-      </ul>
-    </div>
-  </nav>
+  <nav className="nav-wrapper grey darken-3">
+  <div className="container">
+    <Link to='/' className="brand-logo">Secret-Recipes</Link>
+    <SignedInLinks/>
+    <SignedOutLinks/>
+    
+  </div>
+</nav>
 )
 
 }
