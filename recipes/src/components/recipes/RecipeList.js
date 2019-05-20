@@ -94,32 +94,42 @@ class FriendsList extends React.Component {
                 },
             
 
-            ]
+            ],
+            filteredRecipes:[],
     }
 }
 
- 
+// searchRecipesHandler=e=>{
+// const recipes=this.state.recipes(r=>{
+//     if(r.title.includes(e.target.value)){
+//         return r;
+//     }
+// })
+// this.setState({filteredRecipes:recipes});
 
+
+// }
 render(){
-
     return (
         
         <div className="list">
         <h1>Recipes</h1>
         
         <div>
-            <SearchBar/>
+            <SearchBar />
         <div className="test">
         {this.state.recipes.map(recipe=>{
             return (
-                <Link to={`/recipe/${recipe.id}`}>
+                <Link to={`/recipes/${recipe.id}`}>
                 <RecipeSummary recipe={recipe}/>
                 </Link>
             )
         })}
          
         </div>
-        <Route path="/recipe/:id" render={props=> <RecipeDetails {...props} recipes={this.state.recipes}/>}/>
+        
+        <Route exact path="/recipes/:id" render={props=> <RecipeDetails {...props} recipes={this.state.recipes}/>}/>
+        
         </div>
        
         </div>

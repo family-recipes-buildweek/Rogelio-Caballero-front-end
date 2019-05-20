@@ -3,11 +3,11 @@ import React from 'react'
 
 
 
-const RecipeDetails=(props)=>{
+function RecipeDetails(props) {
     
     const recipe=props.recipes.find(
-        thing=>`${thing.id}`===props.match.params.id
-    )
+        recipe=>(`${recipe.id}`=== props.match.params.id)
+    );
         return (
             <div>
             <p>{recipe.title}</p>
@@ -16,10 +16,7 @@ const RecipeDetails=(props)=>{
             <p>{recipe.nameOfSource}</p>
             <p>{recipe.Ingredients}</p>
             <p>{recipe.Instructions}</p> 
-
             </div>
-
-
         )
         
     }

@@ -8,9 +8,9 @@ import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
 import SignIn from "./components/auth/SignIn"
 import RecipeForm from './components/recipes/RecipeForm'
-
+import RecipeDetails from './components/recipes/RecipeDetails'
 import SignUp from "./components/auth/SignUp"
-import RecipeDetails from './components/recipes/RecipeDetails';
+
 
 function App() {
   return (
@@ -19,11 +19,12 @@ function App() {
        <NavBar/>
         <div className="App">
         <Switch>
-        <Route  path="/login" component={SignIn}/>
-        <Route path="/register" component={SignUp}/>
-        <Route path="/recipes" component={RecipeList}/>
-        <Route path="/recipeForm" component={RecipeForm}/>
-        
+        <Route  exact path="/login" component={SignIn}/>
+        <Route exact path="/register" component={SignUp}/>
+        <Route exact path="/recipes" component={RecipeList}/>
+        <Route exact path="/recipeForm" component={RecipeForm}/>
+       {/* <Route exact path="/recipes/:id" component={RecipeDetails}/>
+         */}
         </Switch>
         </div>
     </Router>
