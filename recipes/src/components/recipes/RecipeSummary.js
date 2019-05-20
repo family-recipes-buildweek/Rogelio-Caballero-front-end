@@ -3,25 +3,29 @@ import React from 'react';
 
 const RecipeSummary =(props)=>{
 return (
-    <div>
-    <div style={{width:"600px"}}>
-         <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src={props.recipe.img}/>
-          <span class="card-title">{props.recipe.title}</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">go</i></a>
-        </div>
+    
+
+<div class="col s12 m7">
+    <h5 class="header">{props.recipe.title}</h5>
+    
+    <div class="card horizontal">
+  
+      <div class="card-image">
+        <img src={props.recipe.img}/>
+      </div>
+      <div class="card-stacked">
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+          <p class="flow-text">I am a very simple card. I am good at containing small bits of information.</p>
+        
+        </div>
+        <div class="card-action">
+          <a href="#">details</a>
         </div>
       </div>
+     
     </div>
   </div>
-    </div>
-   </div>
-
+  
 )
 
 }

@@ -7,13 +7,7 @@ import RecipeForm from "./RecipeForm"
 import SearchBar from './SearchBar'
 
 
-const SummaryCard=styled.div`
-display:flex;
-flex-wrap:wrap;
-width:500px;
-height:600px;
-margin:20px 20px;
-`
+
 
 
 
@@ -57,9 +51,9 @@ class FriendsList extends React.Component {
                         },
 
                         {
-                            id:1,
-                            title:'Yum-Yum-Tacos',
-                            img:'https://images.pexels.com/photos/2087748/pexels-photo-2087748.jpeg?cs=srgb&dl=blur-close-up-cuisine-2087748.jpg&fm=jpg',
+                            id:4,
+                            title:'Some-Salt-Stuff',
+                            img:'https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                             instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
                             nameOfSource:'mom',
                             category:'mexican',
@@ -67,9 +61,9 @@ class FriendsList extends React.Component {
                 
                         },
                         {
-                            id:1,
-                            title:'Yum-Yum-Tacos',
-                            img:'https://images.pexels.com/photos/2087748/pexels-photo-2087748.jpeg?cs=srgb&dl=blur-close-up-cuisine-2087748.jpg&fm=jpg',
+                            id:5,
+                            title:'Winos',
+                            img:'https://images.pexels.com/photos/1893609/pexels-photo-1893609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                             instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
                             nameOfSource:'mom',
                             category:'mexican',
@@ -78,9 +72,9 @@ class FriendsList extends React.Component {
                         },
 
                 {
-                            id:1,
-                            title:'Yum-Yum-Tacos',
-                            img:'https://images.pexels.com/photos/2087748/pexels-photo-2087748.jpeg?cs=srgb&dl=blur-close-up-cuisine-2087748.jpg&fm=jpg',
+                            id:6,
+                            title:'Tiny-Burrito',
+                            img:'https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                             instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
                             nameOfSource:'mom',
                             category:'mexican',
@@ -88,9 +82,9 @@ class FriendsList extends React.Component {
                 
                         },
                         {
-                            id:1,
-                            title:'Yum-Yum-Tacos',
-                            img:'https://images.pexels.com/photos/2087748/pexels-photo-2087748.jpeg?cs=srgb&dl=blur-close-up-cuisine-2087748.jpg&fm=jpg',
+                            id:7,
+                            title:'One-Chicken',
+                            img:'https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                             instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
                             nameOfSource:'mom',
                             category:'mexican',
@@ -108,18 +102,19 @@ render(){
     return (
         <div className="list">
         <h1>Recipes</h1>
-       < SummaryCard>
+       
         <div>
             <SearchBar/>
-        
+        <div className="test">
         {this.state.recipes.map(recipe=>{
             return (
                 <RecipeSummary recipe={recipe}/>
             )
         })}
         </div>
-    </SummaryCard>
-    {/* <RecipeForm/> */}
+        </div>
+    
+    
         </div>
        
        

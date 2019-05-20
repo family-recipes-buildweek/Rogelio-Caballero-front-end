@@ -22,7 +22,7 @@ class RecipeForm extends React.Component{
 
 render(){
     return (
-    <div style={{width:"500px"}}>
+    <div >
         <form>
         <div class="input-field col s6">
           <input id="icon_prefix1" type="text" class="validate"/>
