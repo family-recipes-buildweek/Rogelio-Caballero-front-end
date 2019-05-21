@@ -22,7 +22,7 @@ export const SIGNUP_START = "SIGNUP_START";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGNUP_ERROR = "SIGNUP_ERROR";
 
-export const signup = creds => dispatch => {
+export const signUp = creds => dispatch => {
   dispatch({ type: SIGNUP_START });
 
   const endpoint2 = "";

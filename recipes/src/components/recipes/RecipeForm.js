@@ -56,7 +56,7 @@ render(){
         </div>
 
         <div class="file-field input-field">
-        <div class="btn">
+        <div class="btn deep-orange darken-3">
             <span>img</span>
             <input  type="file"/>
         </div>

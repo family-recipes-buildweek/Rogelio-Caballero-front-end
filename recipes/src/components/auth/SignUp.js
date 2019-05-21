@@ -1,5 +1,5 @@
 import React from "react"
-import { signup } from "../Actions";
+import { signUp } from "../store/actions/recipesActions";
 import { connect } from "react-redux";
 
 class SignUp extends React.Component{
@@ -36,7 +36,7 @@ return (
 
     <form onSubmit={this.handleSubmit}>
     <div class="input-field col s6">
-          <input id="icon_prefix1" type="text" name="email" onChange={this.handleChange} class="validate"/>
+          <input id="icon_prefix1" type="text" name="email" onChange={this.handleChange} class="validate "/>
           <label for="icon_prefix1">email</label>
         </div>
 
@@ -50,7 +50,7 @@ return (
           <label for="icon_prefix8">password</label>
         </div>
 
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <button class="btn waves-effect waves-light deep-orange darken-3" type="submit" name="action">Submit
        
        </button>
 
@@ -70,5 +70,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { signup }
+  { signUp }
 )(SignUp);

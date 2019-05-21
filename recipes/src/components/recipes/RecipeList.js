@@ -2,10 +2,10 @@ import React from 'react';
 
 import RecipeSummary from './RecipeSummary'
 
-import styled from 'styled-components'
-import RecipeForm from "./RecipeForm"
+// import styled from 'styled-components'
+// import RecipeForm from "./RecipeForm"
 import SearchBar from './SearchBar'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import RecipeDetails from './RecipeDetails';
 import { BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import RecipeContainer from './RecipeContainer'
@@ -101,10 +101,10 @@ class FriendsList extends React.Component {
     }
 }
 
-// deleteFriend = id => {
-//     this.setState({ deletingFriendId: id });
-//     this.props.deleteFriends(id);
-//   };
+deleteFriend = id => {
+    this.setState({ deletingFriendId: id });
+    this.props.deleteFriends(id);
+  };
 
 searchRecipesHandler=e=>{
 const recipes=this.state.recipes.filter(r=>{

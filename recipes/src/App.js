@@ -20,10 +20,10 @@ function App() {
        <NavBar/>
         <div className="App">
         <Switch>
-        <Route  exact path="/Login" component={SignIn}/>
+        <Route  exact path="/" component={SignIn}/>
         <Route exact path="/register" component={SignUp}/>
 
-        <Route  path="/recipes" component={RecipeList}/>
+        <Route  path="/recipes/recipe-list" component={RecipeList}/>
         <Route  path="/recipeForm" component={RecipeForm}/>
      
         

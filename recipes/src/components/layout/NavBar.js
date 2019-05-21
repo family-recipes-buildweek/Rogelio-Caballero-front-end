@@ -6,7 +6,7 @@ import SignedOutLinks from './SignedOutLinks'
 
 const NavBar =(props)=>{
 return(
-  <nav className="nav-wrapper grey darken-3">
+  <nav className="nav-wrapper blue lighten-3 hoverable">
   <div className="container">
     <Link to='/'  className="brand-logo">Secret-Recipes</Link>
     <SignedInLinks/>
