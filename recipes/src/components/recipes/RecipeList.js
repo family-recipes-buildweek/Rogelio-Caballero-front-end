@@ -1,7 +1,7 @@
 import React from 'react';
 
 import RecipeSummary from './RecipeSummary'
-import './recipes.css'
+
 import styled from 'styled-components'
 import RecipeForm from "./RecipeForm"
 import SearchBar from './SearchBar'
@@ -26,7 +26,7 @@ class FriendsList extends React.Component {
                     title:'Yum-Yum-Tacos',
                     img:'https://images.pexels.com/photos/2087748/pexels-photo-2087748.jpeg?cs=srgb&dl=blur-close-up-cuisine-2087748.jpg&fm=jpg',
                     instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
-                    nameOfSource:'mom',
+                    nameOfSource:'grandma',
                     category:'mexican',
                     Ingredients:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
             
@@ -37,7 +37,7 @@ class FriendsList extends React.Component {
                     img:'https://images.pexels.com/photos/116738/pexels-photo-116738.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                     instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
                     nameOfSource:'mom',
-                    category:'',
+                    category:'italian',
                     Ingredients:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
             
                 },
@@ -46,8 +46,8 @@ class FriendsList extends React.Component {
                     title:'Extra-juicy-Steak',
                     img:'https://images.pexels.com/photos/1268549/pexels-photo-1268549.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                     instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
-                    nameOfSource:'mom',
-                    category:'',
+                    nameOfSource:'great-grandma',
+                    category:'american',
                     Ingredients:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
             
                 },
@@ -67,7 +67,7 @@ class FriendsList extends React.Component {
                     title:'Winos',
                     img:'https://images.pexels.com/photos/1893609/pexels-photo-1893609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                     instructions:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
-                    nameOfSource:'mom',
+                    nameOfSource:'crusty-krab',
                     category:'mexican',
                     Ingredients:'1 pound ground beef 70-80% leantablespoon Chili Powde teaspoon Sal teaspoon Cumin teaspoon Dried Oreganoteaspoon Garlic Powde teaspoon Onion Powdercup tomato sauce',
             
@@ -117,15 +117,20 @@ render(){
         <div className="list">
         <h1>Recipes</h1>
         <div>
-            <SearchBar searchTerm={this.state.searchTerm} searchRecipes={this.searchRecipesHandler} />
+     <SearchBar searchTerm={this.state.searchTerm} searchRecipes={this.searchRecipesHandler} />
 
-        
-        <RecipeContainer
-         recipes={
-             this.state.filteredRecipes.length>0?this.state.filteredRecipes:this.state.recipes
-         }/>
          
-         <Route path="/recipes/:id" render={ (props) => {
+       <RecipeContainer
+          recipes={
+             this.state.filteredRecipes.length>0?this.state.filteredRecipes:this.state.recipes
+       }/> 
+
+        <Route exact path="/recipe-list" render={props=>{
+           return ( <RecipeContainer {...props} recipes={this.state.recipes}/>)
+        }}/>
+
+
+         <Route path="/recipe-list/:id" render={ (props) => {
             return(<RecipeDetails {...props}  recipes={this.state.recipes}/>)
           }} />
         

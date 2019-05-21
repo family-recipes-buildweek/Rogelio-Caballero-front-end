@@ -39,7 +39,7 @@ export const DELETE_START = 'DELETE_START';
 export const DELETE_SUCCESS = 'DELETE_SUCCESS';
 export const DELETE_FAILURE = 'DELETE_FAILURE';
 
-export const deleteFriends = id => dispatch => {
+export const deleteRecipe = id => dispatch => {
   dispatch({ type: DELETE_START });
   axios
     .delete(``, {
@@ -62,7 +62,7 @@ export const ADD_RECIPES_START = 'ADD_RECIPES_START';
 export const ADD_RECIPES_SUCCESS = 'ADD_RECIPES_SUCCESS';
 export const ADD_RECIPES_FAILURE = 'ADD_RECIPES_FAILURE';
 
-export const addFriend = friend => dispatch => {
+export const addRecipe= friend => dispatch => {
   dispatch({ type: ADD_RECIPES_FAILURE });
   return axios
     .post('', friend, {
@@ -84,7 +84,7 @@ export const EDIT_RECIPES_START = 'EDIT_RECIPES_START';
 export const EDIT_RECIPES_SUCCESS  = 'EDIT_RECIPES_SUCCESS ';
 export const EDIT_RECIPES_FAILURE = 'EDIT_RECIPES_FAILURE';
 
-export const editFriend = friend => dispatch => {
+export const editRecipe = friend => dispatch => {
   dispatch({ type: EDIT_RECIPES_START });
   return axios
     .put(``, friend, {

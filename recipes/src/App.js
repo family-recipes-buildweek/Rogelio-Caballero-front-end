@@ -10,6 +10,7 @@ import SignIn from "./components/auth/SignIn"
 import RecipeForm from './components/recipes/RecipeForm'
 import RecipeDetails from './components/recipes/RecipeDetails'
 import SignUp from "./components/auth/SignUp"
+// import PrivateRoute from './components/recipes/PrivateRoute';
 
 
 function App() {
@@ -19,12 +20,12 @@ function App() {
        <NavBar/>
         <div className="App">
         <Switch>
-        <Route  exact path="/login" component={SignIn}/>
+        <Route  exact path="/Login" component={SignIn}/>
         <Route exact path="/register" component={SignUp}/>
         <Route exact path="/recipes" component={RecipeList}/>
         <Route exact path="/recipeForm" component={RecipeForm}/>
-       {/* <Route exact path="/recipes/:id" component={RecipeDetails}/>
-         */}
+     
+        
         </Switch>
         </div>
     </Router>

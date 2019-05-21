@@ -16,7 +16,10 @@ constructor(){
 
 handleChange = (e) => {
     this.setState({
-      [e.target.id]: e.target.value
+      credentials:{
+        ...this.state.credentials,
+        [e.target.id]: e.target.value
+      }
     })
   }
 
@@ -31,17 +34,17 @@ render(){
 return (
     <form>
     <div class="input-field col s6">
-          <input id="icon_prefix1" type="text" class="validate"/>
+          <input id="icon_prefix1" type="text" name="email" onChange={this.handleChange} class="validate"/>
           <label for="icon_prefix1">email</label>
         </div>
 
         <div class="input-field col s6">
-          <input id="icon_prefix7" type="text" class="validate"/>
+          <input id="icon_prefix7" type="text" name="username" onChange={this.handleChange} class="validate"/>
           <label for="icon_prefix7">username</label>
         </div>
 
         <div class="input-field col s6">
-          <input id="icon_prefix8" type="text" class="validate"/>
+          <input id="icon_prefix8" type="text" name="password" onChange={this.handleChange} class="validate"/>
           <label for="icon_prefix8">password</label>
         </div>
 
