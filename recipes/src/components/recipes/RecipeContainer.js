@@ -17,10 +17,10 @@ const RecipeContainer=props=>{
             {props.recipes.map(recipe=>{
                 return (
                     // <div onClick={ev=>routeToItem(ev,recipe)} key={recipe.id}>
-                    <Link to={`/recipe-list/${recipe.id}`}>
+                    <Link to={`/recipes/recipe-list/${recipe.id}`}>
                     
                     <RecipeSummary recipe={recipe} id={recipe.id}/>
-                    </Link>
+                     </Link>
                     // </div>
                 )
             })}

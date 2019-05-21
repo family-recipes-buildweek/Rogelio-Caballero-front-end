@@ -6,11 +6,11 @@ import RecipeList from './components/recipes/RecipeList'
 import { BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
-import SignIn from "./components/auth/SignIn"
-import RecipeForm from './components/recipes/RecipeForm'
-import RecipeDetails from './components/recipes/RecipeDetails'
-import SignUp from "./components/auth/SignUp"
-// import PrivateRoute from './components/recipes/PrivateRoute';
+import SignIn from "./components/auth/SignIn";
+import RecipeForm from './components/recipes/RecipeForm';
+// import RecipeDetails from './components/recipes/RecipeDetails';
+import SignUp from "./components/auth/SignUp";
+import PrivateRoute from './PrivateRoute';
 
 
 function App() {
@@ -22,8 +22,9 @@ function App() {
         <Switch>
         <Route  exact path="/Login" component={SignIn}/>
         <Route exact path="/register" component={SignUp}/>
-        <Route exact path="/recipes" component={RecipeList}/>
-        <Route exact path="/recipeForm" component={RecipeForm}/>
+
+        <Route  path="/recipes" component={RecipeList}/>
+        <Route  path="/recipeForm" component={RecipeForm}/>
      
         
         </Switch>

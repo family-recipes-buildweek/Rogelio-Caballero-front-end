@@ -117,20 +117,19 @@ render(){
         <div className="list">
         <h1>Recipes</h1>
         <div>
-     <SearchBar searchTerm={this.state.searchTerm} searchRecipes={this.searchRecipesHandler} />
-
-         
-       <RecipeContainer
-          recipes={
-             this.state.filteredRecipes.length>0?this.state.filteredRecipes:this.state.recipes
-       }/> 
-
-        <Route exact path="/recipe-list" render={props=>{
-           return ( <RecipeContainer {...props} recipes={this.state.recipes}/>)
+     
+     
+        <Route exact path="/recipes/recipe-list" render={props=>{
+            return (<SearchBar {...props} searchTerm={this.state.searchTerm} searchRecipes={this.searchRecipesHandler}/>)
         }}/>
 
 
-         <Route path="/recipe-list/:id" render={ (props) => {
+        <Route  exact path="/recipes/recipe-list" render={props=>{
+           return ( <RecipeContainer {...props} recipes={this.state.filteredRecipes.length>0?this.state.filteredRecipes:this.state.recipes}/>)
+        }}/>
+
+
+         <Route path="/recipes/recipe-list/:id" render={ (props) => {
             return(<RecipeDetails {...props}  recipes={this.state.recipes}/>)
           }} />
         

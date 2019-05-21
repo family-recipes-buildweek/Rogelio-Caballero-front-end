@@ -8,7 +8,7 @@ const SignedInLinks = (props) => {
       <div>
         <ul className="right">
           <li><NavLink to='/recipeForm'>New Recipe</NavLink></li>
-          <li><NavLink to='/recipes'>Recipes</NavLink></li>
+          <li><NavLink to='/recipes/recipe-list'>Recipes</NavLink></li>
           <li><NavLink to='/Login'>Log Out</NavLink></li>
         </ul>
       </div>

@@ -30,7 +30,7 @@ class RecipeForm extends React.Component{
 
     addRecipe=e=>{
     e.preventDefault();
-    this.props.addRecipe(this.state.friend)
+    this.props.addRecipe(this.state.recipe)
     .then(()=>{
         this.props.history.push('/recipes')
     })
