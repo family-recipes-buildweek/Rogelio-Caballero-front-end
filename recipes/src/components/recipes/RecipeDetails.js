@@ -14,6 +14,12 @@ function RecipeDetails(props) {
             <div>
             <p>{recipe.ingredients}</p>
             <p>{recipe.instructions}</p>
+            
+            <i
+                class="fas fa-times"
+                // onClick={}
+              />
+              <p>delete recipe</p>
             </div>
         )
         

@@ -22,6 +22,7 @@ return (
         </div>
         <div class="card-action">
           <a href="#">details</a>
+          
         </div>
         
       </div>

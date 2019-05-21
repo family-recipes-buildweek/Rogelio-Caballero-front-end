@@ -1,5 +1,6 @@
 import React from "react"
-
+import { connect } from "react-redux";
+import { login } from "../Actions";
 
 class Login extends React.Component{
 constructor(){
@@ -25,7 +26,7 @@ handleChange = (e) => {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.signIn(this.state.credentials)
-    .then(()=>this.props.history.push('/protected'))
+    .then(()=>this.props.history.push('/'))
   }
 
 render(){
@@ -57,4 +58,14 @@ return (
 )
 }
 }
-export default Login;
+
+const mapStateToProps = state => ({
+  loggingIn: state.loggingIn,
+  error: state.error,
+  signingUp: state.signingUp
+});
+
+export default connect(
+  mapStateToProps,
+  { login }
+)(Login);

@@ -1,7 +1,8 @@
 import React from "react"
+import { signup } from "../Actions";
+import { connect } from "react-redux";
 
-
-class Login extends React.Component{
+class SignUp extends React.Component{
 constructor(){
     super();
     this.state={
@@ -32,7 +33,8 @@ handleChange = (e) => {
 render(){
 
 return (
-    <form>
+
+    <form onSubmit={this.handleSubmit}>
     <div class="input-field col s6">
           <input id="icon_prefix1" type="text" name="email" onChange={this.handleChange} class="validate"/>
           <label for="icon_prefix1">email</label>
@@ -60,4 +62,13 @@ return (
 )
 }
 }
-export default Login;
+const mapStateToProps = state => ({
+  loggingIn: state.loggingIn,
+  error: state.error,
+  signingUp: state.signingUp
+});
+
+export default connect(
+  mapStateToProps,
+  { signup }
+)(SignUp);
