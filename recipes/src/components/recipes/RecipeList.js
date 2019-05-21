@@ -8,6 +8,7 @@ import SearchBar from './SearchBar'
 import {Link} from 'react-router-dom'
 import RecipeDetails from './RecipeDetails';
 import { BrowserRouter as Router, Route,Switch} from 'react-router-dom';
+import RecipeContainer from './RecipeContainer'
 
 
 
@@ -96,39 +97,40 @@ class FriendsList extends React.Component {
 
             ],
             filteredRecipes:[],
+            searchTerm:''
     }
 }
 
-// searchRecipesHandler=e=>{
-// const recipes=this.state.recipes(r=>{
-//     if(r.title.includes(e.target.value)){
-//         return r;
-//     }
-// })
-// this.setState({filteredRecipes:recipes});
+searchRecipesHandler=e=>{
+const recipes=this.state.recipes.filter(r=>{
+    if(r.title.includes(e.target.value)){
+        return r;
+    }
+})
+this.setState({filteredRecipes:recipes});
 
 
-// }
+}
 render(){
     return (
         
         <div className="list">
         <h1>Recipes</h1>
-        
         <div>
-            <SearchBar />
-        <div className="test">
-        {this.state.recipes.map(recipe=>{
-            return (
-                <Link to={`/recipes/${recipe.id}`}>
-                <RecipeSummary recipe={recipe}/>
-                </Link>
-            )
-        })}
-         
-        </div>
+            <SearchBar searchTerm={this.state.searchTerm} searchRecipes={this.searchRecipesHandler} />
+
         
-        <Route exact path="/recipes/:id" render={props=> <RecipeDetails {...props} recipes={this.state.recipes}/>}/>
+        <RecipeContainer
+         recipes={
+             this.state.filteredRecipes.length>0?this.state.filteredRecipes:this.state.recipes
+         }/>
+         
+         <Route path="/recipes/:id" render={ (props) => {
+            return(<RecipeDetails {...props}  recipes={this.state.recipes}/>)
+          }} />
+        
+      
+   
         
         </div>
        

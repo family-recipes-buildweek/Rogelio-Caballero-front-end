@@ -1,5 +1,30 @@
-const initState = {
+import {
+    USER_UNAUTHORIZED,
+    FETCH_DATA_START,
+    FETCH_DATA_SUCCESS,
+    FETCH_DATA_FAILURE,
+    DELETE_START,
+    DELETE_SUCCESS,
+    ADD_RECIPES_START,
+    ADD_RECIPES_SUCCESS,
+    ADD_RECIPES_FAILURE,
+    EDIT_RECIPES_START,
+    EDIT_RECIPES_SUCCESS,
+    EDIT_RECIPES_FAILURE,
+    LOGIN_START,
+    LOGIN_SUCCESS
+  } from '../actions/recipesActions';
 
+const initialState = {
+
+    addingRecipe:false,
+    deletingRecipe: false,
+    editingRecipe: false,
+    error: '',
+    errorStatusCode: null,
+    fetchingRecipes: false,
+    loggingIn:false,
+    token:localStorage.getItem('token'),
     recipes:[
     {
         id:1,
@@ -77,17 +102,85 @@ const initState = {
 
 }
 
-const recipeReducer = (state = initState, action) => {
-  switch (action.type) {
-    case 'CREATE_RECIPE_SUCCESS':
-      console.log('create project success');
-      return state;
-    case 'CREATE_RECIPE_ERROR':
-      console.log('create project error');
-      return state;
-    default:
-      return state;
-  }
-};
+const rootReducer = (state = initialState, action) => {
+    console.log(action);
+    switch (action.type) {
+        case LOGIN_START:
+        return {
+          ...state,
+          loggingIn: true
+        };
+      case LOGIN_SUCCESS:
+        return {
+          ...state,
+          loggingIn: false,
+          token: action.payload
+        };
 
-export default recipeReducer;
+
+      case FETCH_DATA_START:
+        return {
+          ...state,
+          fetchingFriends: true
+        };
+      case FETCH_DATA_SUCCESS:
+        return {
+          ...state,
+          error: '',
+          errorStatusCode: null,
+          fetchingFriends: false,
+          friends: action.payload
+        };
+      case DELETE_START:
+        return {
+          ...state,
+          deletingFriend: true
+        };
+      case DELETE_SUCCESS:
+        return {
+          ...state,
+          deletingFriend: false,
+          error: '',
+          errorStatusCode: null,
+          friends: action.payload
+        };
+      case USER_UNAUTHORIZED:
+        console.log(action);
+        return {
+          ...state,
+          error: action.payload.data.error,
+          errorStatusCode: action.payload.status,
+          fetchingFriends: false
+        };
+      case ADD_RECIPES_START:
+        return {
+          ...state,
+          addingFriend: true
+        };
+      case ADD_RECIPES_SUCCESS:
+        return {
+          ...state,
+          addingFriend: false,
+          error: '',
+          errorStatusCode: null,
+          friends: action.payload
+        };
+      case EDIT_RECIPES_START:
+        return {
+          ...state,
+          editingFriend: true
+        };
+      case EDIT_RECIPES_SUCCESS:
+        return {
+          ...state,
+          editingFriend: false,
+          error: '',
+          errorStatusCode: null,
+          friends: action.payload
+        };
+      default:
+        return state;
+    }
+  };
+  
+  export default rootReducer;

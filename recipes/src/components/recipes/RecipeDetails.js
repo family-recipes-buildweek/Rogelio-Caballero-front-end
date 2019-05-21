@@ -5,9 +5,12 @@ import React from 'react'
 
 function RecipeDetails(props) {
     
-    const recipe=props.recipes.find(
-        recipe=>(`${recipe.id}`=== props.match.params.id)
-    );
+    // const recipe=props.recipes.find(
+    //     recipe=>(`${recipe.id}`=== props.match.params.id)
+    // );
+
+    let id =props.match.params.id;
+    let recipe=props.recipes.find(recipe=>recipe.id==Number(id))
         return (
             <div>
             <p>{recipe.title}</p>

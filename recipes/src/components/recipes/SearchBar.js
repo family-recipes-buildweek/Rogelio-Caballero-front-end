@@ -22,17 +22,25 @@ import styled from 'styled-components';
 const SearchBar = props => {
     return (
      
-       <form>
-            <div class="input-field col s6">
-          <input id="icon_prefix1" type="text" class="validate" />
-          <label for="icon_prefix1"><i class="fas fa-search"></i></label>
-          <button onClick={props.searchRecipes}>ok</button>
+      //  <form>
+      //       <div class="input-field col s6">
+      //     <input id="icon_prefix1" type="text" class="validate" />
+      //     <label for="icon_prefix1"><i class="fas fa-search"></i></label>
+      //     <button onClick={props.searchRecipes}>ok</button>
           
          
            
        
-        </div>
-        </form>
+      //   </div>
+      //   </form>
+      <div>
+      
+      <input
+        type="text"
+        placeholder="Search"
+        onKeyDown={props.searchRecipes}
+      />
+    </div>
     );
   };
   
