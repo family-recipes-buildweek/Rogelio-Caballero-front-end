@@ -1,6 +1,6 @@
 import React from 'react'
-
-
+import { connect } from 'react-redux';
+import { addRecipe } from "../store/actions/recipesActions";
 
 class RecipeForm extends React.Component{
     constructor(){
@@ -8,7 +8,6 @@ class RecipeForm extends React.Component{
         this.state={
             recipe:{
                 title:'',
-                img:'',
                 category:'',
                 nameOfSource:'',
                 Ingredients:'',
@@ -32,12 +31,11 @@ class RecipeForm extends React.Component{
     e.preventDefault();
     this.props.addRecipe(this.state.recipe)
     .then(()=>{
-        this.props.history.push('/recipes')
+        this.props.history.push('/recipes/recipe-list')
     })
         this.setState({
             recipe:{
                 title:'',
-                img:'',
                 category:'',
                 nameOfSource:'',
                 Ingredients:'',
@@ -49,13 +47,13 @@ class RecipeForm extends React.Component{
 render(){
     return (
     <div >
-        <form>
+        <form onSubmit={this.addRecipe}>
         <div class="input-field col s6">
           <input id="icon_prefix1" name='title'  value={this.state.recipe.title} onChange={this.handleChanges} type="text" class="validate"/>
           <label for="icon_prefix1">title</label>
         </div>
 
-        <div class="file-field input-field">
+        {/* <div class="file-field input-field">
         <div class="btn deep-orange darken-3">
             <span>img</span>
             <input  type="file"/>
@@ -63,7 +61,7 @@ render(){
         <div class="file-path-wrapper">
             <input name='img' value={this.state.recipe.img}  onChange={this.handleChanges} class="file-path validate" type="text"/>
         </div>
-        </div>
+        </div> */}
 
         <div class="input-field col s6">
           <input name="category" value={this.state.recipe.category}  onChange={this.handleChanges} id="icon_prefix2" type="text" class="validate"/>
@@ -88,7 +86,7 @@ render(){
             <label for="textarea5">Intructions</label>
             </div>
         </div>
-
+        <button type="submit">submit </button>
         </form>
             
 
@@ -103,5 +101,12 @@ render(){
 
 
 }
-export default RecipeForm;
+const mapStateToProps = ({ addingRecipe }) => ({
+    addingRecipe
+  });
+  
+  export default connect(
+    mapStateToProps,
+    { addRecipe }
+  )(RecipeForm);
 

@@ -7,7 +7,6 @@ constructor(){
     super();
     this.state={
         credentials:{
-            email:'',
             username:'',
             password:'',
 
@@ -19,14 +18,15 @@ handleChange = (e) => {
     this.setState({
       credentials:{
         ...this.state.credentials,
-        [e.target.id]: e.target.value
+        [e.target.name]: e.target.value
       }
     })
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.signUp(this.state);
+    this.props.signUp(this.state.credentials)
+    .then(()=>this.props.history.push('/login'))
   }
 
 
@@ -35,11 +35,6 @@ render(){
 return (
 
     <form onSubmit={this.handleSubmit}>
-    <div class="input-field col s6">
-          <input id="icon_prefix1" type="text" name="email" onChange={this.handleChange} class="validate "/>
-          <label for="icon_prefix1">email</label>
-        </div>
-
         <div class="input-field col s6">
           <input id="icon_prefix7" type="text" name="username" onChange={this.handleChange} class="validate"/>
           <label for="icon_prefix7">username</label>
@@ -50,7 +45,7 @@ return (
           <label for="icon_prefix8">password</label>
         </div>
 
-        <button class="btn waves-effect waves-light deep-orange darken-3" type="submit" name="action">Submit
+        <button class="btn waves-effect waves-light deep-orange darken-3" type="submit" name="action">Register
        
        </button>
 

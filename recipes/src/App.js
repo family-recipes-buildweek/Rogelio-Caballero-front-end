@@ -10,7 +10,7 @@ import SignIn from "./components/auth/SignIn";
 import RecipeForm from './components/recipes/RecipeForm';
 // import RecipeDetails from './components/recipes/RecipeDetails';
 import SignUp from "./components/auth/SignUp";
-import PrivateRoute from './PrivateRoute';
+// import PrivateRoute from './PrivateRoute';
 
 
 function App() {
@@ -21,10 +21,11 @@ function App() {
         <div className="App">
         <Switch>
         <Route  exact path="/" component={SignIn}/>
+        <Route  exact path="/login" component={SignIn}/>
         <Route exact path="/register" component={SignUp}/>
 
-        <Route  path="/recipes/recipe-list" component={RecipeList}/>
-        <Route  path="/recipeForm" component={RecipeForm}/>
+        <Route   path="/recipes/recipe-list" component={RecipeList}/>
+        <Route  exact path="/recipeForm" component={RecipeForm}/>
      
         
         </Switch>

@@ -1,23 +1,22 @@
 import React from "react"
 import { connect } from "react-redux";
 import { login } from "../store/actions/recipesActions";
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component{
-constructor(){
-    super();
-    this.state={
+    state={
       credentials:{
         username:'',
         password:'',
       }
             
-    }
+    
 }
 handleChange = (e) => {
     this.setState({
       credentials:{
         ...this.state.credentials,
-        [e.target.id]: e.target.value
+        [e.target.name]: e.target.value
       }
       
     })
@@ -26,7 +25,7 @@ handleChange = (e) => {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.login(this.state.credentials)
-    .then(()=>this.props.history.push('/'))
+    .then(()=>this.props.history.push('/recipes/recipe-list'))
   }
 
 render(){
@@ -43,14 +42,15 @@ return (
           <label for="icon_prefix2">password</label>
         </div>
 
-        <button class="btn waves-effect waves-light deep-orange darken-3" type="submit" name="action">Submit
+        <button class="btn waves-effect waves-light deep-orange darken-3" type="submit" name="action">Login
        
   </button>
-        
+  {' '}
+  <Link to="/register"><button class="btn waves-effect waves-light deep-orange darken-3" type="submit" name="action">Register
+       
+       </button></Link>
 
         
-
-
 
     </form>
    
