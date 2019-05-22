@@ -152,6 +152,12 @@ const rootReducer = (state = initialState, action) => {
         signingUp: false,
         error: action.payload
       };
+      case LOG_OUT:
+      return {
+        ...state,
+        loggedIn: false,
+        token: null
+      };
 ///////////////////////////////////////////
       case FETCH_DATA_START:
         return {
