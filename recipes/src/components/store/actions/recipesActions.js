@@ -61,14 +61,14 @@ export const USER_UNAUTHORIZED = 'FETCH_DATA_FAILURE';
 export const getData = () => dispatch => {
   dispatch({ type: FETCH_DATA_START });
 
-  const endpoint3="https://team-family-recipes.herokuapp.com/api/recipe";
-
   axios
-    .get(endpoint3, {
+    .get('https://team-family-recipes.herokuapp.com/api/recipe', {
       headers: { Authorization: localStorage.getItem('jwt') }
     })
     .then(res => {
+      
       dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data });
+      console.log(res.data)
     })
     .catch(err => {
       console.log('call failed: ', err.response);
@@ -83,15 +83,18 @@ export const getData = () => dispatch => {
 export const DELETE_START = 'DELETE_START';
 export const DELETE_SUCCESS = 'DELETE_SUCCESS';
 export const DELETE_FAILURE = 'DELETE_FAILURE';
+export const SINGLE_RECIPE='SINGLE_RECIPE'
 
 export const deleteRecipe = id => dispatch => {
   dispatch({ type: DELETE_START });
+  console.log(id)
   axios
-    .delete(`https://team-family-recipes.herokuapp.com/api/recipe/${id}`, {
+    .delete(`https://team-family-recipes.herokuapp.com/api/recipe/${id}`,{
       headers: { Authorization: localStorage.getItem('jwt') }
     })
     .then(res => {
       dispatch({ type: DELETE_SUCCESS, payload: res.data });
+      // dispatch({type:SINGLE_RECIPE,payload:{}})
     })
     .catch(err => {
       console.log('call failed: ', err.response);
@@ -108,13 +111,13 @@ export const ADD_RECIPES_SUCCESS = 'ADD_RECIPES_SUCCESS';
 export const ADD_RECIPES_FAILURE = 'ADD_RECIPES_FAILURE';
 
 export const addRecipe= recipe => dispatch => {
-  dispatch({ type: ADD_RECIPES_FAILURE });
+  dispatch({ type: ADD_RECIPES_START });
+  console.log(recipe)
   return axios
     .post('https://team-family-recipes.herokuapp.com/api/recipe', recipe, {
       headers: { Authorization: localStorage.getItem('jwt') }
     })
     .then(res => {
-      console.log(res)
       dispatch({ type: ADD_RECIPES_SUCCESS, payload: res.data });
     })
     .catch(err => {

@@ -3,19 +3,16 @@ import { connect } from 'react-redux';
 import { addRecipe } from "../store/actions/recipesActions";
 
 class RecipeForm extends React.Component{
-    constructor(){
-        super();
-        this.state={
+   state={
             recipe:{
-                Title:'',
-                Category:'',
-                nameOfSource:'',
-                Ingredients:'',
-                intructions:'',
+                title:'',
+                // category:'',
+                // nameOfSource:'',
+                // ingredients:'',
+                instructions:'',
             }
            
-            }
-    }
+       }
 
         handleChanges=(e)=>{
             this.setState({
@@ -35,10 +32,10 @@ class RecipeForm extends React.Component{
     })
         this.setState({
             recipe:{
-                Title:'',
-                Category:'',
-                nameOfSource:'',
-                Ingredients:'',
+                title:'',
+                // category:'',
+                // nameOfSource:'',
+                // ingredients:'',
                 intructions:'',
             }
         })
@@ -47,9 +44,10 @@ class RecipeForm extends React.Component{
 render(){
     return (
     <div >
+        <h1>Add New Recipe</h1>
         <form onSubmit={this.addRecipe}>
         <div class="input-field col s6">
-          <input id="icon_prefix1" name='Title'  value={this.state.recipe.Title} onChange={this.handleChanges} type="text" class="validate"/>
+          <input id="icon_prefix1" name='title'  value={this.state.recipe.title} onChange={this.handleChanges} type="text" class="validate"/>
           <label for="icon_prefix1">title</label>
         </div>
 
@@ -63,27 +61,27 @@ render(){
         </div>
         </div> */}
 
-        <div class="input-field col s6">
-          <input name="Category" value={this.state.recipe.Category}  onChange={this.handleChanges} id="icon_prefix2" type="text" class="validate"/>
+     {/* <div class="input-field col s6">
+         <input name="category" value={this.state.recipe.category}  onChange={this.handleChanges} id="icon_prefix2" type="text" class="validate"/>
           <label for="icon_prefix2">category</label>
         </div>
         <div class="input-field col s6">
-          <input name="nameOfSource" value={this.state.recipe.nameOfSource}  onChange={this.handleChanges} id="icon_prefix3" type="text" class="validate"/>
-          <label for="icon_prefix3">nameOfSource</label>
+         <input name="nameOfSource" value={this.state.recipe.nameOfSource}  onChange={this.handleChanges} id="icon_prefix3" type="text" class="validate"/>
+         <label for="icon_prefix3">nameOfSource</label>
         </div>
         
     
-        <div class="row">
+       <div class="row">
             <div class="input-field col s12">
-            <textarea name="Ingredients" value={this.state.recipe.Ingredients} onChange={this.handleChanges} id="textarea4" class="materialize-textarea"></textarea>
-            <label for="textarea4">ingredients</label>
-            </div>
-        </div>
+           <textarea name="ingredients" value={this.state.recipe.ingredients} onChange={this.handleChanges} id="textarea4" class="materialize-textarea"></textarea>
+           <label for="textarea4">ingredients</label>
+           </div>
+       </div> */}
 
         <div class="row">
             <div class="input-field col s12">
-            <textarea name="intructions" value={this.state.recipe.intructions}  onChange={this.handleChanges} id="textarea5" class="materialize-textarea"></textarea>
-            <label for="textarea5">intructions</label>
+            <textarea name="instructions"  alue={this.state.recipe.instructions}  onChange={this.handleChanges} id="textarea5" class="materialize-textarea deep-orange-text darken-3"></textarea>
+            <label for="textarea5">instructions</label>
             </div>
         </div>
         <button   class="btn waves-effect waves-light deep-orange darken-3" type="submit" name="action">Add

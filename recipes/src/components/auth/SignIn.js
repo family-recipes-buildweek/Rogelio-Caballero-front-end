@@ -4,11 +4,15 @@ import { login } from "../store/actions/recipesActions";
 import { Link } from 'react-router-dom';
 
 class Login extends React.Component{
-    state={
+  constructor(props){
+    super(props);
+    this.state={
       credentials:{
         username:'',
         password:'',
       }
+  }
+   
             
     
 }

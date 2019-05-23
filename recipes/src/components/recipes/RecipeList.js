@@ -23,13 +23,14 @@ class RecipeList extends React.Component {
 
 
 componentDidMount(){
-    
     this.props.getData();
+    console.log(this.props.recipes)
 }
 
 
 searchRecipesHandler=e=>{
-const recipes=this.props.recipes.filter(recipe=>{if(recipe.title.includes(e.target.value)){return recipe;}
+    const data = Array.from(this.props.recipes);
+const recipes=data.filter(recipe=>{if(recipe.title.includes(e.target.value)){return recipe;}
 })
 this.setState({filteredRecipes:recipes});
 }
@@ -37,10 +38,11 @@ this.setState({filteredRecipes:recipes});
 deleteRecipe = id => {
     this.setState({ deletingRecipeId: id });
     this.props.deleteRecipe(id);
+    console.log(id)
   };
 
 
-
+ 
 
 render(){
     return (
@@ -56,7 +58,7 @@ render(){
 
 
         <Route  exact path="/recipes/recipe-list" render={props=>{
-           return ( <RecipeContainer {...props} recipes={this.state.filteredRecipes.length>0?this.state.filteredRecipes:this.props.recipes}/>)
+           return ( <RecipeContainer {...props} deleteRecipe={this.deleteRecipe} recipes={this.state.filteredRecipes.length>0?this.state.filteredRecipes:this.props.recipes}/>)
         }}/>
 
 

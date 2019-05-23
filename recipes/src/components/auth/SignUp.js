@@ -3,8 +3,8 @@ import { signUp } from "../store/actions/recipesActions";
 import { connect } from "react-redux";
 
 class SignUp extends React.Component{
-constructor(){
-    super();
+constructor(props){
+    super(props);
     this.state={
         credentials:{
             username:'',
