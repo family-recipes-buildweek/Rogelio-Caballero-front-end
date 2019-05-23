@@ -1,20 +1,29 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
+import SignedInLinks from './SignedInLinks'
+import SignedOutLinks from './SignedOutLinks'
+import { connect } from 'react-redux'
 
 const NavBar =(props)=>{
 return(
-    <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo right">Secret-Family-Recipes</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="sass.html">Login</a></li>
-        <li><a href="badges.html">Sign Up</a></li>
-        <li><a href="collapsible.html"></a></li>
-      </ul>
-    </div>
-  </nav>
+  
+  <nav className="nav-wrapper blue lighten-3 hoverable">
+  <div className="container">
+    <Link className="brand-logo left ">Secret-Recipes</Link>
+    
+    {props.loggedIn?<SignedInLinks/>:<SignedOutLinks/>}
+
+  </div>
+</nav>
 )
 
 }
-export default NavBar;
+const mapStateToProps = (state) => {
+ 
+  return{
+    loggedIn: state.loggedIn,
+  }
+}
+
+export default connect(mapStateToProps)(NavBar)
