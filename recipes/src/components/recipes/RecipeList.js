@@ -29,7 +29,8 @@ componentDidMount(){
 
 
 searchRecipesHandler=e=>{
-const recipes=this.props.recipes.filter(recipe=>{if(recipe.title.includes(e.target.value)){return recipe;}
+    const data = Array.from(this.props.recipes);
+const recipes=data.filter(recipe=>{if(recipe.title.includes(e.target.value)){return recipe;}
 })
 this.setState({filteredRecipes:recipes});
 }
@@ -41,7 +42,7 @@ deleteRecipe = id => {
   };
 
 
-
+ 
 
 render(){
     return (

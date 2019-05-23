@@ -11,10 +11,11 @@ const RecipeContainer=props=>{
     //     ev.preventDefault();
     //     props.history.push(`/recipe-list/${recipe.id}`);
     //   }
+    const data = Array.from(props.recipes);
    
     return (
         <div>
-            {props.recipes.map(recipe=>{
+            {data.map(recipe=>{
                 return (
                     // <div onClick={ev=>routeToItem(ev,recipe)} key={recipe.id}>
                     <Link to={`/recipes/recipe-list/${recipe.id}`}>
