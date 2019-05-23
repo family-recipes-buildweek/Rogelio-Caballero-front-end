@@ -23,8 +23,8 @@ class RecipeList extends React.Component {
 
 
 componentDidMount(){
-    
     this.props.getData();
+    console.log(this.props.recipes)
 }
 
 
@@ -37,6 +37,7 @@ this.setState({filteredRecipes:recipes});
 deleteRecipe = id => {
     this.setState({ deletingRecipeId: id });
     this.props.deleteRecipe(id);
+    console.log(id)
   };
 
 

@@ -19,7 +19,7 @@ function RecipeDetails(props) {
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
                 
-                <h4>Ingredients</h4>
+                {/* <h4>Ingredients</h4> */}
                 <p>{recipe.ingredients}</p>
                 <h4>Instructions</h4>
              <p>{recipe.instructions}</p>
