@@ -1,3 +1,7 @@
-base = "recipes/"
-publish = "recipes/build/"
-command = "yarn build"
+[build]
+  functions = "functions"
+  publish = "build"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
