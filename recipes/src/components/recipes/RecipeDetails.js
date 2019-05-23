@@ -29,13 +29,16 @@ function RecipeDetails(props) {
                <Link exact to="/recipes/recipe-list"><a class="waves-effect waves-light btn-small deep-orange darken-3">  My Recipes </a></Link> 
                <Link exact to="/recipeForm"><a class="waves-effect waves-light btn-small deep-orange darken-3">  Add Recipe </a></Link> 
 
-
-               <a onClick={(e) => { if (window.confirm('Are you sure you wish to delete this recipe?')) props.deleteRecipe(e) } }class="waves-effect waves-light btn black red-text accent-4" >delete</a>
+       
+               {/* <a onClick={(e) => { if (window.confirm('Are you sure you wish to delete this recipe?')) props.deleteRecipe() } }class="waves-effect waves-light btn black red-text accent-4" >delete</a> */}
+                <button onClick={() => props.deleteRecipe(recipe.id)}>
+                    delete
+                </button>
                 </div>
             </div>
             </div>
+            
             </div>
-
 
 
         )

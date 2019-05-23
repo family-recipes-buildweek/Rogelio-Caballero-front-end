@@ -32,6 +32,7 @@ render(){
 
 return (
     <form onSubmit={this.handleSubmit}>
+    <h2>Access Recipes</h2>
     <div class="input-field col s6 ">
           <input id="icon_prefix1" name='username' onChange={this.handleChange} type="text" class="validate"/>
           <label for="icon_prefix1">username</label>

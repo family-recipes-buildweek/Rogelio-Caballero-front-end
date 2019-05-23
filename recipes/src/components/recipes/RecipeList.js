@@ -4,7 +4,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import SearchBar from './SearchBar'
 import RecipeDetails from './RecipeDetails';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { Route} from 'react-router-dom';
 import RecipeContainer from './RecipeContainer'
 import { getData,deleteRecipe } from "../store/actions/recipesActions";
 
@@ -23,19 +23,15 @@ class RecipeList extends React.Component {
 
 
 componentDidMount(){
+    
     this.props.getData();
 }
 
 
 searchRecipesHandler=e=>{
-const recipes=this.props.recipes.filter(r=>{
-    if(r.title.includes(e.target.value)){
-        return r;
-    }
+const recipes=this.props.recipes.filter(recipe=>{if(recipe.title.includes(e.target.value)){return recipe;}
 })
 this.setState({filteredRecipes:recipes});
-
-
 }
 
 deleteRecipe = id => {
@@ -80,7 +76,8 @@ render(){
 
 const mapStateToProps = state => ({
     recipes: state.recipes,
-    loggingIn: state.loggingIn
+    loggingIn: state.loggingIn,
+    deletingRecipe:state.deletingRecipe,
   });
   export default connect(
     mapStateToProps,

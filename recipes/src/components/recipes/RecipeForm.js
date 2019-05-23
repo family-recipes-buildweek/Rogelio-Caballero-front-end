@@ -7,11 +7,11 @@ class RecipeForm extends React.Component{
         super();
         this.state={
             recipe:{
-                title:'',
-                category:'',
+                Title:'',
+                Category:'',
                 nameOfSource:'',
                 Ingredients:'',
-                Intructions:'',
+                intructions:'',
             }
            
             }
@@ -35,11 +35,11 @@ class RecipeForm extends React.Component{
     })
         this.setState({
             recipe:{
-                title:'',
-                category:'',
+                Title:'',
+                Category:'',
                 nameOfSource:'',
                 Ingredients:'',
-                Intructions:'',
+                intructions:'',
             }
         })
     }
@@ -49,7 +49,7 @@ render(){
     <div >
         <form onSubmit={this.addRecipe}>
         <div class="input-field col s6">
-          <input id="icon_prefix1" name='title'  value={this.state.recipe.title} onChange={this.handleChanges} type="text" class="validate"/>
+          <input id="icon_prefix1" name='Title'  value={this.state.recipe.Title} onChange={this.handleChanges} type="text" class="validate"/>
           <label for="icon_prefix1">title</label>
         </div>
 
@@ -64,7 +64,7 @@ render(){
         </div> */}
 
         <div class="input-field col s6">
-          <input name="category" value={this.state.recipe.category}  onChange={this.handleChanges} id="icon_prefix2" type="text" class="validate"/>
+          <input name="Category" value={this.state.recipe.Category}  onChange={this.handleChanges} id="icon_prefix2" type="text" class="validate"/>
           <label for="icon_prefix2">category</label>
         </div>
         <div class="input-field col s6">
@@ -76,17 +76,19 @@ render(){
         <div class="row">
             <div class="input-field col s12">
             <textarea name="Ingredients" value={this.state.recipe.Ingredients} onChange={this.handleChanges} id="textarea4" class="materialize-textarea"></textarea>
-            <label for="textarea4">Ingredients</label>
+            <label for="textarea4">ingredients</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-            <textarea name="Intructions" value={this.state.recipe.Intructions}  onChange={this.handleChanges} id="textarea5" class="materialize-textarea"></textarea>
-            <label for="textarea5">Intructions</label>
+            <textarea name="intructions" value={this.state.recipe.intructions}  onChange={this.handleChanges} id="textarea5" class="materialize-textarea"></textarea>
+            <label for="textarea5">intructions</label>
             </div>
         </div>
-        <button type="submit">submit </button>
+        <button   class="btn waves-effect waves-light deep-orange darken-3" type="submit" name="action">Add
+       
+       </button>
         </form>
             
 

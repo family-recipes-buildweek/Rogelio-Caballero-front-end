@@ -11,7 +11,7 @@ return (
   
   
       <div class="card-image   ">
-        <img src={props.recipe.img}/>
+        <img alt="food-img" src={props.recipe.img}/>
       </div>
       <div class="card-stacked">
       
@@ -21,7 +21,7 @@ return (
      
         </div>
         <div class="card-action">
-          <a href="#" class= "deep-orange-text darken-3" >details</a>
+        <button class="waves-effect waves-light btn-small deep-orange darken-3">details</button> 
           
         </div>
         

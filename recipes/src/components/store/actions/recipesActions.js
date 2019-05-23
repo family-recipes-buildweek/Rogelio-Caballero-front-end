@@ -9,7 +9,7 @@ export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGNUP_ERROR = "SIGNUP_ERROR";
 export const LOG_OUT ="LOG_OUT"
 
-const baseUrl="https://team-family-recipes.herokuapp.com/api"
+
 
 export const signUp = creds => dispatch => {
   dispatch({ type: SIGNUP_START });
@@ -52,7 +52,7 @@ export const logOut =()=>{
   }
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const FETCH_DATA_START = 'FETCH_DATA_START';
 export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
@@ -61,7 +61,7 @@ export const USER_UNAUTHORIZED = 'FETCH_DATA_FAILURE';
 export const getData = () => dispatch => {
   dispatch({ type: FETCH_DATA_START });
 
-  const endpoint3="https://team-family-recipes.herokuapp.com/api/recipes";
+  const endpoint3="https://team-family-recipes.herokuapp.com/api/recipe";
 
   axios
     .get(endpoint3, {
@@ -114,6 +114,7 @@ export const addRecipe= recipe => dispatch => {
       headers: { Authorization: localStorage.getItem('jwt') }
     })
     .then(res => {
+      console.log(res)
       dispatch({ type: ADD_RECIPES_SUCCESS, payload: res.data });
     })
     .catch(err => {

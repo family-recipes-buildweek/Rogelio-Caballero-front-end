@@ -9,14 +9,36 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- /* background: url(https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)repeat;
+ /* background: url(https://images.pexels.com/photos/256318/pexels-photo-256318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)repeat;
  background-size: 100%;
- background-position: middle;
+ background-position: top;
   min-height: 100%; */
-  background-color:whitesmoke;
+  background-image: linear-gradient(to bottom right, whitesmoke, wheat);
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+ /* .input-field [type=text] {
+  color: white;
+}  */
+ /* input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: 0 1px 0 0 white;
+  box-shadow: 0 1px 0 0 white;
+}   */
+/* label focus color */
+/* .input-field input:focus + label {
+  color: white !important;
+}
+/* label underline focus color */
+/* .row .input-field input:focus {
+  border-bottom: 1px solid white !important;
+  box-shadow: 0 1px 0 0 white !important
+} */ 
+/* h5{
+  color: white;
+  text-shadow: -1px -1px 0 , 1px -1px 0 black, -1px 1px 0 black, 1px 1px black;
+} */

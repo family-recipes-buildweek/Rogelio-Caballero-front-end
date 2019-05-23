@@ -21,7 +21,7 @@ import {
   } from '../actions/recipesActions';
 
 const initialState = {
-
+    loggedIn: false,
     addingRecipe:false,
     deletingRecipe: false,
     editingRecipe: false,
@@ -118,13 +118,16 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         error: null,
-        loggingIn: true
+        loggingIn: true,
+        loggedIn:false,
+        
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
         error: null,
-        token: action.payload
+        token: action.payload,
+
       };
     case LOGIN_ERROR:
       return {
@@ -162,7 +165,8 @@ const rootReducer = (state = initialState, action) => {
       case FETCH_DATA_START:
         return {
           ...state,
-          fetchingFriends: true
+          fetchingFriends: true,
+          loggedIn: true,
         };
       case FETCH_DATA_SUCCESS:
         return {
@@ -170,12 +174,14 @@ const rootReducer = (state = initialState, action) => {
           error: '',
           errorStatusCode: null,
           fetchingFriends: false,
-          friends: action.payload
+          friends: action.payload,
+          loggedIn: true,
         };
       case DELETE_START:
         return {
           ...state,
-          deletingFriend: true
+          deletingFriend: true,
+          loggedIn: true,
         };
       case DELETE_SUCCESS:
         return {
@@ -183,7 +189,8 @@ const rootReducer = (state = initialState, action) => {
           deletingFriend: false,
           error: '',
           errorStatusCode: null,
-          friends: action.payload
+          friends: action.payload,
+          loggedIn: true,
         };
       case USER_UNAUTHORIZED:
         console.log(action);
@@ -191,12 +198,14 @@ const rootReducer = (state = initialState, action) => {
           ...state,
           error: action.payload.data.error,
           errorStatusCode: action.payload.status,
-          fetchingFriends: false
+          fetchingFriends: false,
+          loggedIn: true,
         };
       case ADD_RECIPES_START:
         return {
           ...state,
-          addingFriend: true
+          addingFriend: true,
+          loggedIn: true,
         };
       case ADD_RECIPES_SUCCESS:
         return {
@@ -204,12 +213,14 @@ const rootReducer = (state = initialState, action) => {
           addingFriend: false,
           error: '',
           errorStatusCode: null,
-          friends: action.payload
+          friends: action.payload,
+          loggedIn: true,
         };
       case EDIT_RECIPES_START:
         return {
           ...state,
-          editingFriend: true
+          editingFriend: true,
+          loggedIn: true,
         };
       case EDIT_RECIPES_SUCCESS:
         return {
@@ -217,7 +228,8 @@ const rootReducer = (state = initialState, action) => {
           editingFriend: false,
           error: '',
           errorStatusCode: null,
-          friends: action.payload
+          friends: action.payload,
+          loggedIn: true,
         };
       default:
         return state;
