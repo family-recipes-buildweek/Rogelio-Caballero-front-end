@@ -44,6 +44,7 @@ class RecipeForm extends React.Component{
 render(){
     return (
     <div >
+        <h1>Add New Recipe</h1>
         <form onSubmit={this.addRecipe}>
         <div class="input-field col s6">
           <input id="icon_prefix1" name='title'  value={this.state.recipe.title} onChange={this.handleChanges} type="text" class="validate"/>
@@ -79,7 +80,7 @@ render(){
 
         <div class="row">
             <div class="input-field col s12">
-            <textarea name="instructions" value={this.state.recipe.instructions}  onChange={this.handleChanges} id="textarea5" class="materialize-textarea"></textarea>
+            <textarea name="instructions"  alue={this.state.recipe.instructions}  onChange={this.handleChanges} id="textarea5" class="materialize-textarea deep-orange-text darken-3"></textarea>
             <label for="textarea5">instructions</label>
             </div>
         </div>

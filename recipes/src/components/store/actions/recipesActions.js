@@ -96,14 +96,14 @@ export const deleteRecipe = id => dispatch => {
       dispatch({ type: DELETE_SUCCESS, payload: res.data });
       // dispatch({type:SINGLE_RECIPE,payload:{}})
     })
-    // .catch(err => {
-    //   console.log('call failed: ', err.response);
-    //   if (err.response.status === 403) {
-    //     dispatch({ type: USER_UNAUTHORIZED, payload: err.response });
-    //   } else {
-    //     dispatch({ type: DELETE_FAILURE, payload: err.response });
-    //   }
-    // });
+    .catch(err => {
+      console.log('call failed: ', err.response);
+      if (err.response.status === 403) {
+        dispatch({ type: USER_UNAUTHORIZED, payload: err.response });
+      } else {
+        dispatch({ type: DELETE_FAILURE, payload: err.response });
+      }
+    });
 };
 //////////////////////////////////////////////////////////////
 export const ADD_RECIPES_START = 'ADD_RECIPES_START';

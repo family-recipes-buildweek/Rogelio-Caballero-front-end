@@ -1,19 +1,23 @@
 html{
   min-height: 100%;
+ 
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family:Open Sans
+  /* , -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif */
+    ;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- /* background: url(https://images.pexels.com/photos/256318/pexels-photo-256318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)repeat;
+ background: url(https://images.pexels.com/photos/357743/pexels-photo-357743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)repeat;
  background-size: 100%;
- background-position: top;
-  min-height: 100%; */
-  background-image: linear-gradient(to bottom right, whitesmoke, wheat);
+ background-position: right;
+  min-height: 100%;
+  /* background-image: linear-gradient(to bottom right, whitesmoke, wheat); */
+
 }
 
 
@@ -21,24 +25,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
- /* .input-field [type=text] {
-  color: white;
-}  */
- /* input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  .input-field [type=text] {
+  color: #ef6c00;
+}  /*
+  input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid white;
   -webkit-box-shadow: 0 1px 0 0 white;
   box-shadow: 0 1px 0 0 white;
-}   */
-/* label focus color */
-/* .input-field input:focus + label {
+}   
+ label focus color 
+ .input-field input:focus + label {
   color: white !important;
 }
-/* label underline focus color */
-/* .row .input-field input:focus {
+ label underline focus color 
+.row .input-field input:focus {
   border-bottom: 1px solid white !important;
   box-shadow: 0 1px 0 0 white !important
-} */ 
-/* h5{
-  color: white;
-  text-shadow: -1px -1px 0 , 1px -1px 0 black, -1px 1px 0 black, 1px 1px black;
-} */
+}  */
+ h1,h2,h3{
+  color: #90caf9;
+  text-shadow: -1px -1px 0 , 1px -1px 0 white, -1px 1px 0 white, 1px 1px white;
+} 

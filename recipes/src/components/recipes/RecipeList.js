@@ -58,7 +58,7 @@ render(){
 
 
         <Route  exact path="/recipes/recipe-list" render={props=>{
-           return ( <RecipeContainer {...props} recipes={this.state.filteredRecipes.length>0?this.state.filteredRecipes:this.props.recipes}/>)
+           return ( <RecipeContainer {...props} deleteRecipe={this.deleteRecipe} recipes={this.state.filteredRecipes.length>0?this.state.filteredRecipes:this.props.recipes}/>)
         }}/>
 
 
