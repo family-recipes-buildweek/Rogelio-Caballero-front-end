@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import RecipeSummary from './RecipeSummary'
+
 import { connect } from "react-redux";
 import SearchBar from './SearchBar'
 import RecipeDetails from './RecipeDetails';
@@ -30,7 +30,7 @@ componentDidMount(){
 
 searchRecipesHandler=e=>{
     const data = Array.from(this.props.recipes);
-const recipes=data.filter(recipe=>{if(recipe.title.includes(e.target.value)){return recipe;}
+const recipes=data.filter((recipe)=>{if(recipe.title.includes(e.target.value)){return recipe;}
 })
 this.setState({filteredRecipes:recipes});
 }

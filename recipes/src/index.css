@@ -10,16 +10,16 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif */
     ;
-  -webkit-font-smoothing: antialiased;
+  /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- background: url(https://images.pexels.com/photos/357743/pexels-photo-357743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)repeat;
+ background: url(https://images.unsplash.com/photo-1547063334-bf2f542cf52c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)repeat;
  background-size: 100%;
  background-position: right;
-  min-height: 100%;
-  /* background-image: linear-gradient(to bottom right, whitesmoke, wheat); */
-
+  min-height: 100%; */
+  background-image: linear-gradient(to bottom right, whitesmoke, wheat);
+  /* background: rgb(254,254,254);
+  background: linear-gradient(0deg, rgba(254,254,254,1) 0%, rgba(231,204,148,1) 64%); */
 }
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

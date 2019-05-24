@@ -6,9 +6,7 @@ class RecipeForm extends React.Component{
    state={
             recipe:{
                 title:'',
-                // category:'',
-                // nameOfSource:'',
-                // ingredients:'',
+                
                 instructions:'',
             }
            
@@ -33,9 +31,7 @@ class RecipeForm extends React.Component{
         this.setState({
             recipe:{
                 title:'',
-                // category:'',
-                // nameOfSource:'',
-                // ingredients:'',
+               
                 intructions:'',
             }
         })
@@ -51,32 +47,7 @@ render(){
           <label for="icon_prefix1">title</label>
         </div>
 
-        {/* <div class="file-field input-field">
-        <div class="btn deep-orange darken-3">
-            <span>img</span>
-            <input  type="file"/>
-        </div>
-        <div class="file-path-wrapper">
-            <input name='img' value={this.state.recipe.img}  onChange={this.handleChanges} class="file-path validate" type="text"/>
-        </div>
-        </div> */}
-
-     {/* <div class="input-field col s6">
-         <input name="category" value={this.state.recipe.category}  onChange={this.handleChanges} id="icon_prefix2" type="text" class="validate"/>
-          <label for="icon_prefix2">category</label>
-        </div>
-        <div class="input-field col s6">
-         <input name="nameOfSource" value={this.state.recipe.nameOfSource}  onChange={this.handleChanges} id="icon_prefix3" type="text" class="validate"/>
-         <label for="icon_prefix3">nameOfSource</label>
-        </div>
-        
-    
-       <div class="row">
-            <div class="input-field col s12">
-           <textarea name="ingredients" value={this.state.recipe.ingredients} onChange={this.handleChanges} id="textarea4" class="materialize-textarea"></textarea>
-           <label for="textarea4">ingredients</label>
-           </div>
-       </div> */}
+       
 
         <div class="row">
             <div class="input-field col s12">
