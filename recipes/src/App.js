@@ -24,8 +24,8 @@ function App() {
         <Route  exact path="/login" component={SignIn}/>
         <Route exact path="/register" component={SignUp}/>
 
-        <PrivateRoute    path="/recipes/recipe-list" component={RecipeList}/>
-        <PrivateRoute  exact path="/recipeForm" component={RecipeForm}/>
+        <PrivateRoute     path="/recipes/recipe-list" component={RecipeList}/>
+        <PrivateRoute   exact path="/recipeForm" component={RecipeForm}/>
      
         
         </Switch>
