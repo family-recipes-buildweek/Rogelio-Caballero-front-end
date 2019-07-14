@@ -3,7 +3,7 @@
 
 Pitch: Anyone can go get a cookbook these days, but i want to store my family recipes, handed down.
 
-MVP: Ability to enter new recipe, and delete it. Abilty to sort through the recieps
+MVP: Ability to enter new recipe, and delete it. Ability to sort through the recieps
 
 Stretch Goals: Ability to upload pictures of the original recipe.
 
